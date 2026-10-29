@@ -1,0 +1,9 @@
+Error occurred at Tue May 26 20:40:59 2026:
+Traceback (most recent call last):
+  File "C:\Users\HP\PycharmProjects\schoolapp\login.py", line 516, in toggle_language
+    self.update_all_texts()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\PycharmProjects\schoolapp\login.py", line 524, in update_all_texts
+    self.update_language_toggle(self.layout().itemAt(1).widget().layout().itemAt(0).widget())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'widget'

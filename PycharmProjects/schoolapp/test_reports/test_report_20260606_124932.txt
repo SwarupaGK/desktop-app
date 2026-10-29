@@ -1,0 +1,29 @@
+StudentHub Compile Check Report
+===============================
+
+Date: 2026-06-06 12:49:32
+Command: C:\Python314\python.exe -m py_compile config.py db.py add_student.py view_students.py dashboard.py login.py certificates.py Db_lc.py main.py check_db.py tests\test_schoolapp.py
+Status: PASS
+Exit code: 0
+
+Automated Test Output
+---------------------
+(no stdout)
+
+Errors / Warnings
+-----------------
+(no stderr)
+
+Manual / Visual Checklist
+-------------------------
+- LOGIN-01 to LOGIN-06: Verify login, invalid login, reset password, and login with new password.
+- DASH-01 to DASH-08: Verify dashboard navigation, logo, count, language toggle, and logout.
+- ADD-01 to ADD-14: Verify Add Student validations and save flows in the visible app.
+- VIEW-01 to VIEW-23: Verify table display, filters, edit/delete, and promotion flows.
+- CERT-01 to CERT-13: Verify previews, printing/PDF flow, and logo visibility.
+- BACKUP-01 to BACKUP-05: Verify backup dialog behavior and backup file contents.
+- EXE-01 to EXE-12: Rebuild exe, run dist\StudentHub.exe, verify logos/data/year persistence.
+
+Note: Automated tests protect database logic, add/view student flows, backup, certificate helpers,
+packaging paths, and the promotion bug. The checklist items require opening the app/exe because
+they depend on visible UI, dialogs, print previews, or the packaged executable.

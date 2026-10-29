@@ -1,0 +1,4 @@
+# Build the .exe on Windows 7 or for Windows 7 targets.
+# Use Python 3.8.x (64-bit recommended). Python 3.9+ does not support Windows 7.
+PySide2==5.15.2.1
+pyinstaller>=5.13,<6

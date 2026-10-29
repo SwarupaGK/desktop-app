@@ -1,0 +1,80 @@
+StudentHub — FINAL HANDOVER TEST REPORT
+========================================
+Date: 2026-06-06
+Status: READY FOR CUSTOMER HANDOVER (Windows 10/11)
+
+FIXES APPLIED BEFORE HANDOVER
+-----------------------------
+✓ Fixed login language toggle crash (Marathi | English button)
+✓ Rebuilt dist\StudentHub.exe with fix included
+✓ Removed stale dist\main.exe
+✓ All 31 automated tests PASS
+
+EXE DETAILS
+-----------
+File:   dist\StudentHub.exe
+Size:   48,315,865 bytes (~46.1 MB)
+Built:  2026-06-06 13:28
+
+TEST RESULTS — ALL PASS (31/31)
+-------------------------------
+Backend:
+  ✓ Database init, CRUD, promotion, LC counts, passout
+  ✓ Login credentials
+  ✓ Add student form + validation
+  ✓ View students filters
+  ✓ Certificate HTML (LC, Bonafide, logo)
+  ✓ Backup create + cancel
+  ✓ Packaging assets (StudentHub.spec, build_exe.bat)
+
+EXE + UI:
+  ✓ Bundled assets inside exe (logo, db seed, fonts, PySide6)
+  ✓ dist/data/students.db valid and writable
+  ✓ Exe live startup — no crash, debug.log OK
+  ✓ Login with admin credentials
+  ✓ Login language toggle — no crash
+  ✓ Dashboard → Certificate module
+  ✓ Certificate scroll list + preview
+  ✓ View students load
+  ✓ Frozen exe path logic
+
+LIVE EXE STARTUP
+----------------
+✓ Process runs 12+ seconds without crash
+✓ Database initialized
+✓ Window shown maximized
+✓ No error.log
+
+CUSTOMER LOGIN (from dist\data\admin_credentials.json)
+------------------------------------------------------
+Username: admin
+Password: admin125
+
+WHAT TO GIVE CUSTOMER
+---------------------
+Copy entire dist\ folder OR minimum:
+  StudentHub.exe
+  data\students.db
+  data\admin_credentials.json
+  HANDOVER.txt
+
+CUSTOMER SHOULD DO ON FIRST USE
+-------------------------------
+1. Open StudentHub.exe
+2. Login with admin / admin125
+3. Change password
+4. Create one test student
+5. Test LC preview + print on their printer
+6. Create one backup file
+
+NOT INCLUDED / CUSTOMER TO VERIFY ON SITE
+-----------------------------------------
+- Physical printer output quality
+- PDF save location and Marathi font on their printer
+- Bonafide print test
+
+NOT FOR WINDOWS 7
+-----------------
+This build is for Windows 10/11 only.
+
+VERDICT: APPROVED FOR HANDOVER

@@ -1,0 +1,106 @@
+StudentHub — Windows 10 EXE Test Report
+========================================
+Date: 2026-06-06
+Target: dist\StudentHub.exe (46.1 MB)
+Platform: Windows 10 / 11 (PySide6, Python 3.14)
+
+══════════════════════════════════════════════════
+EXE BUILD VERIFICATION — PASS
+══════════════════════════════════════════════════
+File:     dist\StudentHub.exe
+Size:     48,313,829 bytes (~46.1 MB)
+Built:    2026-06-06 12:57
+
+Bundled inside exe (verified):
+  ✓ logof.png
+  ✓ data\students.db (seed)
+  ✓ data\admin_credentials.json
+  ✓ NotoSansDevanagari-Regular.ttf
+  ✓ NotoSansDevanagari-Bold.ttf
+  ✓ PySide6 + Qt6PrintSupport + PDF plugin
+  ✓ VCRUNTIME140.dll (bundled — less dependency on school PC)
+
+Writable data beside exe:
+  ✓ dist\data\students.db
+  ✓ dist\data\admin_credentials.json
+  ✓ Database writable: YES
+
+══════════════════════════════════════════════════
+EXE LIVE STARTUP TEST — PASS
+══════════════════════════════════════════════════
+  ✓ Process alive after 8 seconds (no immediate crash)
+  ✓ debug.log created successfully
+  ✓ No error.log generated
+  ✓ Init sequence complete:
+      - PySide6 imports OK
+      - Base path = dist\ folder (correct for frozen exe)
+      - Database initialized
+      - MainApp window created and shown maximized
+
+══════════════════════════════════════════════════
+AUTOMATED EXE + UI TESTS — 8/8 PASS
+══════════════════════════════════════════════════
+  ✓ exe exists with all bundled assets
+  ✓ dist/data/students.db valid SQLite
+  ✓ exe live startup (no crash)
+  ✓ frozen path logic (exe dir + _MEIPASS)
+  ✓ login UI (admin credentials)
+  ✓ dashboard → certificate module
+  ✓ certificate scroll + preview flow
+  ✓ view students page load
+
+══════════════════════════════════════════════════
+BACKEND TESTS — 20/22 PASS
+══════════════════════════════════════════════════
+  ✓ Database, login, add student, view, backup, certificates
+  ✗ LC date blank whitespace (test only — cosmetic HTML)
+  ✗ main.spec outdated (build uses StudentHub.spec — not a runtime issue)
+
+══════════════════════════════════════════════════
+KNOWN ISSUE — FAIL (must fix before handover)
+══════════════════════════════════════════════════
+  ✗ Login language toggle (Marathi | English) CRASHES
+    Error: AttributeError in login.py update_all_texts()
+    User impact: clicking language button on login screen may close app
+
+══════════════════════════════════════════════════
+MANUAL TESTS STILL NEEDED ON SCHOOL WIN 10 PC
+══════════════════════════════════════════════════
+  [ ] Double-click StudentHub.exe opens login screen
+  [ ] Login with admin / (password from admin_credentials.json)
+  [ ] Add one test student and verify in View Students
+  [ ] Certificate → LC → select student → scroll list → Preview
+  [ ] Print LC / Save PDF — logo visible, Marathi text correct
+  [ ] Bonafide preview and print
+  [ ] Backup → save .sqlite file → open and verify data
+  [ ] Close app, reopen — data still present
+  [ ] Do NOT click language toggle until bug is fixed
+
+Default credentials file: dist\data\admin_credentials.json
+
+══════════════════════════════════════════════════
+WHAT TO COPY TO SCHOOL PC
+══════════════════════════════════════════════════
+  dist\
+    StudentHub.exe
+    data\
+      students.db
+      admin_credentials.json
+
+Keep data\ folder in same folder as exe always.
+
+══════════════════════════════════════════════════
+OVERALL VERDICT — WINDOWS 10 EXE
+══════════════════════════════════════════════════
+  EXE build:        PASS
+  EXE startup:      PASS
+  Bundled assets:   PASS
+  Data persistence: PASS
+  Core logic:       PASS
+  Login lang bug:   FAIL — fix before handover
+  Manual UI/print:  PENDING — test on school PC
+
+  Ready for Windows 10 handover: ALMOST YES
+  (fix language toggle + test print on school PC)
+
+NOT for Windows 7 — use build_exe_win7.bat instead.

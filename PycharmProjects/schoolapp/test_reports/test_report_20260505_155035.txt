@@ -1,0 +1,83 @@
+StudentHub Automated Test Report
+================================
+
+Date: 2026-05-05 15:50:35
+Command: C:\Python314\python.exe -m unittest discover -v
+Status: PASS
+Exit code: 0
+
+Automated Test Output
+---------------------
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB] Integrity Error: UNIQUE constraint failed: students.student_id
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+[DB Migration] Added column: residential_status
+[DB] Migration check complete.
+
+Errors / Warnings
+-----------------
+test_add_academic_year_validation_and_persistence (tests.test_schoolapp.AddStudentTests.test_add_academic_year_validation_and_persistence) ... ok
+test_save_current_student_from_form (tests.test_schoolapp.AddStudentTests.test_save_current_student_from_form) ... ok
+test_backup_cancel_does_not_create_file (tests.test_schoolapp.BackupTests.test_backup_cancel_does_not_create_file) ... ok
+test_backup_creates_sqlite_copy_and_adds_extension (tests.test_schoolapp.BackupTests.test_backup_creates_sqlite_copy_and_adds_extension) ... ok
+test_certificate_logo_html_uses_resolved_logo_path (tests.test_schoolapp.CertificateTests.test_certificate_logo_html_uses_resolved_logo_path) ... ok
+test_mark_student_as_passout_extracts_year_from_leaving_date (tests.test_schoolapp.CertificateTests.test_mark_student_as_passout_extracts_year_from_leaving_date) ... ok
+test_validate_lc_fields_reports_missing_required_data (tests.test_schoolapp.CertificateTests.test_validate_lc_fields_reports_missing_required_data) ... ok
+test_academic_year_persists_without_students (tests.test_schoolapp.DatabaseTests.test_academic_year_persists_without_students) ... ok
+test_counts_status_and_promotion_helpers (tests.test_schoolapp.DatabaseTests.test_counts_status_and_promotion_helpers) ... ok
+test_init_db_creates_required_tables_and_columns (tests.test_schoolapp.DatabaseTests.test_init_db_creates_required_tables_and_columns) ... ok
+test_promote_student_returns_true_when_year_already_exists (tests.test_schoolapp.DatabaseTests.test_promote_student_returns_true_when_year_already_exists) ... ok
+test_save_fetch_duplicate_delete_student (tests.test_schoolapp.DatabaseTests.test_save_fetch_duplicate_delete_student) ... ok
+test_default_and_saved_admin_credentials (tests.test_schoolapp.LoginTests.test_default_and_saved_admin_credentials) ... ok
+test_build_script_includes_required_packaged_assets (tests.test_schoolapp.PackagingPathTests.test_build_script_includes_required_packaged_assets) ... ok
+test_resource_paths_and_seed_data_copy (tests.test_schoolapp.PackagingPathTests.test_resource_paths_and_seed_data_copy) ... ok
+test_next_academic_year_helper (tests.test_schoolapp.ViewStudentsTests.test_next_academic_year_helper) ... ok
+test_view_student_loaders_and_filters (tests.test_schoolapp.ViewStudentsTests.test_view_student_loaders_and_filters) ... ok
+test_year_selection_refreshes_new_year (tests.test_schoolapp.ViewStudentsTests.test_year_selection_refreshes_new_year) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.255s
+
+OK
+
+Manual / Visual Checklist
+-------------------------
+- LOGIN-01 to LOGIN-06: Verify login, invalid login, reset password, and login with new password.
+- DASH-01 to DASH-08: Verify dashboard navigation, logo, count, language toggle, and logout.
+- ADD-01 to ADD-14: Verify Add Student validations and save flows in the visible app.
+- VIEW-01 to VIEW-23: Verify table display, filters, edit/delete, and promotion flows.
+- CERT-01 to CERT-13: Verify previews, printing/PDF flow, and logo visibility.
+- BACKUP-01 to BACKUP-05: Verify backup dialog behavior and backup file contents.
+- EXE-01 to EXE-12: Rebuild exe, run dist\StudentHub.exe, verify logos/data/year persistence.
+
+Note: Automated tests protect database logic, add/view student flows, backup, certificate helpers,
+packaging paths, and the promotion bug. The checklist items require opening the app/exe because
+they depend on visible UI, dialogs, print previews, or the packaged executable.

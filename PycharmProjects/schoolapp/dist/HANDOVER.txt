@@ -1,0 +1,57 @@
+StudentHub — Customer Handover Package
+======================================
+For: Windows 10 / Windows 11
+
+WHAT TO COPY
+------------
+Copy this entire folder to the school PC:
+
+  StudentHub.exe
+  data\
+    students.db
+    admin_credentials.json
+
+Keep the data folder in the same place as StudentHub.exe always.
+
+
+HOW TO START
+------------
+1. Double-click StudentHub.exe
+2. Login:
+     Username: admin
+     Password: admin125
+3. Change password after first login (Forgot Password on login screen)
+
+
+MAIN FEATURES
+-------------
+- Add Student
+- View Students (filter, edit, promote)
+- Certificates (LC and Bonafide) with student search and scroll list
+- Backup (save database copy)
+
+
+IMPORTANT — DATA SAFETY
+-----------------------
+All student records are saved in:
+
+  data\students.db
+
+DO NOT delete the data folder.
+Take backup regularly from Backup menu in the app.
+
+
+IF APP DOES NOT OPEN
+--------------------
+Install Microsoft Visual C++ Redistributable (x64):
+https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist
+
+Screen resolution: 1024 x 768 or higher recommended.
+
+
+SUPPORT NOTE
+------------
+If you move the app to another PC, copy both StudentHub.exe and the data folder together.
+
+Built: 2026-06-06
+Platform: Windows 10 / 11

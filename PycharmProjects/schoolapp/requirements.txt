@@ -1,0 +1,4 @@
+# Development on Windows 10/11 (default)
+PySide6>=6.6.0
+
+# Windows 7 .exe: use Python 3.8 + requirements-win7.txt + build_exe_win7.bat
